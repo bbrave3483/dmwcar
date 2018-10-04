@@ -1,0 +1,69 @@
+<nav class="navbar dmw-nav">
+    <a class="navbar-brand" href="#/home">
+        <img src="static/images/logo_small.jpg" height="40" class="d-inline-block align-top" alt="">
+    </a>
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="#/home">首頁</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="#/query">歌單</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#/rank">統計</a>
+        </li>
+    </ul>
+</nav>
+
+<div class="my-3">
+    <form>
+        <div class="form-row justify-content-end">
+            <div class="col-12 col-sm-6 col-md-4">
+                <select class="custom-select" id="query-type" ng-model="vm.query_type">
+                    <option value="stream_date">實況日期</option>
+                    <option value="artist">歌手</option>
+                    <option value="title">歌名</option>
+                </select>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="input-group mb-3">
+                    <input class="form-control" type="text" id="query-word" ng-model="vm.query_word" placeholder="關鍵字">
+                    <div class="input-group-append">
+                        <button class="col-auto btn btn-info" type="submit" ng-click="vm.refresh()">查詢</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="my-3">
+    <table class="table table-bordered table-hover text-center">
+        <thead>
+            <tr>
+                <th class="align-middle">實況日期</th>
+                <th class="align-middle">歌手</th>
+                <th class="align-middle">歌名</th>
+            </tr>
+        </thead>
+        <tbody ng-repeat="song in vm.songs">
+            <tr>
+                <td class="align-middle">{{ song.stream_date }}</td>
+                <td class="align-middle">{{ song.artist }}</td>
+                <td class="align-middle">{{ song.title }}</td>
+            </tr>
+        </tbody>
+        <tbody>
+            <tr ng-show="vm.loading">
+                <td class="align-middle" colspan="3">
+                    <i class="fa fa-spinner fa-spin" style="font-size:24px;"></i>
+                </td>
+            </tr>
+            <tr ng-show="!vm.loading && vm.songs.length==0">
+                <td class="align-middle" colspan="3">
+                    無資訊
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

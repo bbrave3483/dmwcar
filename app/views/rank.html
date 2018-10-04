@@ -1,0 +1,110 @@
+<nav class="navbar dmw-nav">
+    <a class="navbar-brand" href="#/home">
+        <img src="static/images/logo_small.jpg" height="40" class="d-inline-block align-top" alt="">
+    </a>
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="#/home">首頁</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#/query">歌單</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="#/rank">統計</a>
+        </li>
+    </ul>
+</nav>
+<div class="row my-3">
+    <div class="col"></div>
+    <div class="col-12 col-sm-8 text-center">
+        <h3 style="font-weight: 700;">老王台熱門排行榜</h3>
+    </div>
+
+    <div class="col text-right dropdown">
+        <a class="btn btn-info dropdown-toggle" href="#" target="_self" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{ vm.query_period | translate }}
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" ng-repeat="year in vm.years" href="#/rank/{{ year }}">{{ year | translate }}</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#/rank">{{ 'all' | translate }}</a>
+        </div>
+    </div>
+
+</div>
+<nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <a class="nav-item nav-link active" id="title-tab" data-toggle="tab" href="#title-rank" target="_self" role="tab" aria-controls="title-rank" aria-selected="true">依歌名排行</a>
+        <a class="nav-item nav-link" id="artist-tab" data-toggle="tab" href="#artist-rank" target="_self" role="tab" aria-controls="artist-rank" aria-selected="false">依歌手排行</a>
+    </div>
+</nav>
+<div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="title-rank" role="tabpanel" aria-labelledby="title-tab">
+
+        <div class="my-3">
+            <table class="table table-bordered table-hover text-center">
+                <thead>
+                    <tr>
+                        <th style="width: 15%;"></th>
+                        <th>歌名</th>
+                        <th style="width: 20%;">次數</th>
+                    </tr>
+                </thead>
+                <tbody ng-repeat="stat in vm.title_stats">
+                    <tr>
+                        <td class="align-middle"><i class="sprite sprite-rank-{{ stat.rank }} mx-auto"></i></td>
+                        <td class="align-middle">{{ stat.name }}</td>
+                        <td class="align-middle">{{ stat.value }}</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr ng-show="vm.loading">
+                        <td class="align-middle" colspan="3">
+                            <i class="fa fa-spinner fa-spin" style="font-size:24px;"></i>
+                        </td>
+                    </tr>
+                    <tr ng-show="!vm.loading && vm.title_stats.length==0">
+                        <td class="align-middle" colspan="3">
+                            無資訊
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+    <div class="tab-pane fade" id="artist-rank" role="tabpanel" aria-labelledby="artist-tab">
+
+        <div class="my-3">
+            <table class="table table-bordered table-hover text-center">
+                <thead>
+                    <tr>
+                        <th style="width: 15%;"></th>
+                        <th>歌手</th>
+                        <th style="width: 20%;">次數</th>
+                    </tr>
+                </thead>
+                <tbody ng-repeat="stat in vm.artist_stats">
+                    <tr>
+                        <td class="align-middle"><i class="sprite sprite-rank-{{ stat.rank }} mx-auto"></i></td>
+                        <td class="align-middle">{{ stat.name }}</td>
+                        <td class="align-middle">{{ stat.value }}</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr ng-show="vm.loading">
+                        <td class="align-middle" colspan="3">
+                            <i class="fa fa-spinner fa-spin" style="font-size:24px;"></i>
+                        </td>
+                    </tr>
+                    <tr ng-show="!vm.loading && vm.artist_stats.length==0">
+                        <td class="align-middle" colspan="3">
+                            無資訊
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,89 @@
+.sprite {
+    background-image: url(../images/spritesheet.png);
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.sprite-facebook {
+    width: 36px;
+    height: 36px;
+    background-position: -5px -5px;
+}
+
+.sprite-plurk {
+    width: 36px;
+    height: 36px;
+    background-position: -51px -5px;
+}
+
+.sprite-twitch {
+    width: 36px;
+    height: 36px;
+    background-position: -97px -5px;
+}
+
+.sprite-youtube {
+    width: 36px;
+    height: 36px;
+    background-position: -5px -51px;
+}
+
+.sprite-rank-1 {
+    width: 36px;
+    height: 36px;
+    background-position: -51px -51px;
+}
+
+.sprite-rank-2 {
+    width: 36px;
+    height: 36px;
+    background-position: -97px -51px;
+}
+
+.sprite-rank-3 {
+    width: 36px;
+    height: 36px;
+    background-position: -5px -97px;
+}
+
+.sprite-rank-4 {
+    width: 36px;
+    height: 36px;
+    background-position: -51px -97px;
+}
+
+.sprite-rank-5 {
+    width: 36px;
+    height: 36px;
+    background-position: -97px -97px;
+}
+
+.sprite-rank-6 {
+    width: 36px;
+    height: 36px;
+    background-position: -143px -5px;
+}
+
+.sprite-rank-7 {
+    width: 36px;
+    height: 36px;
+    background-position: -143px -51px;
+}
+
+.sprite-rank-8 {
+    width: 36px;
+    height: 36px;
+    background-position: -143px -97px;
+}
+
+.sprite-rank-9 {
+    width: 36px;
+    height: 36px;
+    background-position: -5px -143px;
+}
+
+.sprite-rank-10 {
+    width: 36px;
+    height: 36px;
+    background-position: -51px -143px;
+}

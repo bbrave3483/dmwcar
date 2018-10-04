@@ -1,0 +1,14 @@
+/* app css stylesheet */
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}
+
+body {
+    max-width: 840px;
+    margin: 1rem auto;
+}
+
+footer {
+    text-align: center;
+    color: #6c757d;
+}
