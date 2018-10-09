@@ -9,7 +9,7 @@
         var directive = {
             restrict: 'E',
             scope: {},
-            template: '<footer><div>Last update on {{ vm.last_modify_date }}.</div><div>Copyright © 2018 by bbrave3483</div></footer>',
+            template: '<footer><div>Last update on {{ vm.last_modify_date }}.</div><div>Copyright © 2018 by bbrave3483<a href="mailto:bbrave3483@gmail.com"><i class="far fa-envelope ml-2"></i></a><a href="https://github.com/bbrave3483/dmwcar"><i class="fab fa-github ml-2"></i></a></div></footer>',
             controller: FooterController,
             controllerAs: 'vm'
         };

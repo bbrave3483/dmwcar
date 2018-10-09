@@ -12,3 +12,11 @@ footer {
     text-align: center;
     color: #6c757d;
 }
+
+footer a {
+    color: #4b6326;
+}
+
+footer a:hover {
+    color: #8ba510;
+}
