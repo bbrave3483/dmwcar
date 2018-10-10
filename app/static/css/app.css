@@ -13,10 +13,10 @@ footer {
     color: #6c757d;
 }
 
-footer a {
+footer a, #collapseTwo a {
     color: #4b6326;
 }
 
-footer a:hover {
+footer a:hover, #collapseTwo a:hover {
     color: #8ba510;
 }
