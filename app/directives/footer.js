@@ -9,15 +9,15 @@
         var directive = {
             restrict: 'E',
             scope: {},
-            template: '<footer><div>Last update on {{ vm.last_modify_date }}.</div><div>Copyright © 2018 by bbrave3483<a href="mailto:bbrave3483@gmail.com" title="Email"><i class="far fa-envelope ml-2"></i></a><a href="https://github.com/bbrave3483/dmwcar" target="_blank" title="GitHub"><i class="fab fa-github ml-2"></i></a></div></footer>',
-            controller: FooterController,
+            templateUrl: 'directives/footer.html',
+            controller: FooterCtrl,
             controllerAs: 'vm'
         };
         return directive;
     }
 
-    FooterController.$inject = ['dataService'];
-    function FooterController(dataService) {
+    FooterCtrl.$inject = ['dataService'];
+    function FooterCtrl(dataService) {
         var vm = this;
         vm.last_modify_date = '';
         dataService.lastModifyDate().then(successCallback, errorCallback);

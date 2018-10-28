@@ -11,38 +11,38 @@ var sequence = require('run-sequence');
 
 gulp.task('clean', function() {
     // Option read:false prevents gulp from reading the contents of the file and makes this task a lot faster.
-    return gulp.src('dist/*', {read: false})
+    return gulp.src('dist/*', {read:false})
         .pipe(clean());
 });
 
 gulp.task('copyResource', function() {
-    return gulp.src(['app/*.html', 'app/static/images/**/*'], {base: 'app'})
-        .pipe(gulp.dest('dist', {mode: 0644}));
+    return gulp.src(['app/index.html', 'app/static/images/**/*'], {base:'app'})
+        .pipe(gulp.dest('dist', {mode:0644}));
 });
 
 gulp.task('buildJs', function() {
-    return gulp.src(['app/*.js', 'app/views/*.js'])
+    return gulp.src('app/**/*.js')
         .pipe(jshint())
         .pipe(jshint.reporter())
         .pipe(concat('app.uncompress.js'))
         .pipe(annotate())
         .pipe(uglify())
         .pipe(rename('app.min.js'))
-        .pipe(gulp.dest('dist/static/js', {mode: 0644}));
+        .pipe(gulp.dest('dist/static/js', {mode:0644}));
 });
 
 gulp.task('buildTemplate', function() {
-    return gulp.src('app/views/*.html')
-        .pipe(templatecache('template.js', {root:'views/', module:'app'}))
+    return gulp.src(['app/**/*.html', '!app/index.html'])
+        .pipe(templatecache('template.js', {module:'app'}))
         .pipe(uglify())
-        .pipe(gulp.dest('dist/static/js', {mode: 0644}))
+        .pipe(gulp.dest('dist/static/js', {mode:0644}))
 });
 
 gulp.task('buildCss', function() {
     return gulp.src('app/static/css/*.css')
         .pipe(concat('app.min.css'))
         .pipe(cleancss())
-        .pipe(gulp.dest('dist/static/css', {mode: 0644}))
+        .pipe(gulp.dest('dist/static/css', {mode:0644}))
 });
 
 gulp.task('release', function(done) {

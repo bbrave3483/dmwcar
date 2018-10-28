@@ -8,15 +8,20 @@ body {
     margin: 1rem auto;
 }
 
-footer {
-    text-align: center;
+.footer {
+    display: table;
+    margin: 0 auto;
     color: #6c757d;
 }
 
-footer a, #collapseTwo a {
+.footer-cell {
+    display: table-cell;
+}
+
+.social-link {
     color: #4b6326;
 }
 
-footer a:hover, #collapseTwo a:hover {
+.social-link:hover {
     color: #8ba510;
 }
