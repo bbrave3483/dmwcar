@@ -9,7 +9,7 @@
         var directive = {
             restrict: 'E',
             scope: {},
-            templateUrl: 'directives/footer.html',
+            templateUrl: '/directives/footer.html',
             controller: FooterCtrl,
             controllerAs: 'vm'
         };

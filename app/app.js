@@ -8,19 +8,18 @@
             'app.query',
             'app.rank'
         ])
-        .config(config)
-        .filter('translate', translate);
+        .config(config);
 
     config.$inject = ['$locationProvider', '$routeProvider'];
     function config($locationProvider, $routeProvider) {
         $locationProvider.hashPrefix('');
         $routeProvider
             .when('/home', {
-                templateUrl: 'views/home.html',
+                templateUrl: '/views/home.html',
                 controller: 'HomeCtrl'
             })
             .when('/query', {
-                templateUrl: 'views/query.html',
+                templateUrl: '/views/query.html',
                 controller: 'QueryCtrl',
                 controllerAs: 'vm',
                 resolve: {
@@ -28,12 +27,12 @@
                 }
             })
             .when('/rank', {
-                templateUrl: 'views/rank.html',
+                templateUrl: '/views/rank.html',
                 controller: 'RankCtrl',
                 controllerAs: 'vm'
             })
             .when('/rank/:year', {
-                templateUrl: 'views/rank.html',
+                templateUrl: '/views/rank.html',
                 controller: 'RankCtrl',
                 controllerAs: 'vm'
             })
@@ -53,11 +52,5 @@
             var today = new Date().toISOString().substring(0,10);
             return today;
         }
-    }
-
-    function translate() {
-        return function(input) {
-            return (input=='all')?'不限時間':(input+'年');
-        };
     }
 })();

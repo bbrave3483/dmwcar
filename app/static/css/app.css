@@ -20,8 +20,9 @@ body {
 
 .social-link {
     color: #4b6326;
+    outline: transparent;
 }
 
-.social-link:hover {
+.social-link:hover, .social-link:focus {
     color: #8ba510;
 }
