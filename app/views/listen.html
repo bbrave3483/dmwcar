@@ -1,0 +1,50 @@
+<nav class="navbar dmw-nav">
+    <a class="navbar-brand" href="#/home">
+        <img src="static/images/logo_small.jpg" height="40" class="d-inline-block align-top" alt="">
+    </a>
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="#/home">首頁</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#/query">歌單</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#/rank">統計</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="#/listen">試聽</a>
+        </li>
+    </ul>
+</nav>
+
+<div class="videogular-container m-5">
+    <videogular vg-theme="vm.config.theme.url">
+        <vg-media vg-src="vm.config.sources">
+        </vg-media>
+        <vg-controls>
+            <vg-play-pause-button></vg-play-pause-button>
+            <vg-time-display>{{ currentTime | date:'mm:ss':'+0000' }}</vg-time-display>
+            <vg-scrub-bar>
+                <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+            </vg-scrub-bar>
+            <!--<vg-time-display>{{ timeLeft | date:'mm:ss':'+0000' }}</vg-time-display>-->
+            <vg-time-display>{{ totalTime | date:'mm:ss':'+0000' }}</vg-time-display>
+            <vg-volume>
+                <vg-mute-button></vg-mute-button>
+                <vg-volume-bar></vg-volume-bar>
+            </vg-volume>
+        </vg-controls>
+        <vg-overlay-play></vg-overlay-play>
+    </videogular>
+    <div class="text-center m-3">
+        <p>
+            不定時更換 OwO
+        </p>
+        <p>
+            另外這裡有份關於本站的
+            <a href="https://forms.gle/Hdj4H4864ZyokWfDA" target="_blank" rel="noopener" title="Form">問卷調查</a>
+            希望看到的朋友如果有空可以填一下 感謝
+        </p>
+    </div>
+</div>

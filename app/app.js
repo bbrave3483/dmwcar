@@ -6,7 +6,8 @@
             'ngRoute',
             'app.home',
             'app.query',
-            'app.rank'
+            'app.rank',
+            'app.listen'
         ])
         .config(config);
 
@@ -34,6 +35,11 @@
             .when('/rank/:year', {
                 templateUrl: '/views/rank.html',
                 controller: 'RankCtrl',
+                controllerAs: 'vm'
+            })
+            .when('/listen', {
+                templateUrl: '/views/listen.html',
+                controller: 'ListenCtrl',
                 controllerAs: 'vm'
             })
             .otherwise({
