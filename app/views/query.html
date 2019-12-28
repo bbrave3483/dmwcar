@@ -53,7 +53,12 @@
             <tr>
                 <td class="align-middle">{{ song.stream_date }}</td>
                 <td class="align-middle">{{ song.artist }}</td>
-                <td class="align-middle">{{ song.title }}</td>
+                <td class="align-middle">
+                    {{ song.title }}
+                    <span ng-if="song.hash.length>0">
+                        <a class="social-link" ng-href="{{ song.hash }}" target="_blank" rel="noopener"><i class="fas fa-headphones-alt"></i></a>
+                    </span>
+                </td>
             </tr>
         </tbody>
         <tbody>
