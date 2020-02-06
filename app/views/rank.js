@@ -9,7 +9,7 @@
     function RankCtrl($routeParams, $location, dataService) {
         var vm = this;
         vm.loading = true;
-        vm.years = ['2015', '2016', '2017', '2018', '2019'];
+        vm.years = ['2015', '2016', '2017', '2018', '2019', '2020'];
         vm.query_period = '';
         vm.artist_stats = [];
         vm.title_stats = [];
